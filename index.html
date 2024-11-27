@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Message to Ma'am Roan</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+		}
+		#click, #newmessage {
+			border: solid 1px #a98979;
+			width: 500px;
+			margin: auto;
+			text-align: center;
+			padding: 10px;
+			border-radius: 30px;
+			background: #a98979;
+			box-shadow: 3px 3px 8px rgba(169, 137, 121, 0.3);
+		}
+		button {
+			display: flex;
+			margin: auto;
+			margin-top: 30px;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+		.button1 {
+			background: #c48264 ;
+			border: solid #c48264 2px;
+			border-radius: 50px;
+			box-shadow: 3px 3px 8px rgba(169, 137, 121, 0.3);
+			width: 150px;
+			height: 35px;		
+		}
+		.button1:hover {
+			background: #a98979;
+			border: solid #c48264 3px;
+			border-radius: 50px;
+			box-shadow: 3px 3px 8px rgba(169, 137, 121, 0.3);
+			width: 150px;
+			height: 35px;		
+		}
+		span {
+			display: inline-block;
+		}
+		#newmessage {
+			display: none;
+		}
+		.zoom-effect {
+		  transition: transform 0.3s ease; 
+		}
+		.zoom-effect:hover {
+		  transform: scale(1.30);
+		  box-shadow: 0 0 20px rgba(169, 137, 121, 0.8);
+		}
+		@keyframes zoomIn {
+		  0% {
+		    transform: scale(0);
+		    opacity: 0;
+		  }
+		  100% {
+		    transform: scale(1);
+		    opacity: 1;
+		  }
+		}
+		.zoom-text {
+		  animation: zoomIn 1s ease-out;
+		}
+		p {
+			text-align: justify;
+		}
+	</style>
+</head>
+<body>
+	<div id="click" onclick="revMessage()">
+		<h1>Message to Ma'am Roan</h1>
+		<button onclick="revealMessage(event)" class="button1 zoom-effect">
+			<b><span>Click Here</span></b>
+		</button>
+	</div>
+
+	<div id="newmessage">
+		<h1>Message to Ma'am Roan</h1>
+		<p id="message" class="zoom-text">Thank you, Ma'am Roan, for your patience in teaching us. Because of you, we've learned so much about web development, and every lesson you share is always clear and easy to understand. Whenever we face difficulties or encounter parts we don't grasp fully, you're always willing to explain things again until we get it. Your dedication means so much to us, and we truly appreciate all the time and effort you put into making sure we succeed. Thank you again, we are so grateful for you!</p>
+		<button id="button" onclick="Restart()" class="button1 zoom-effect">
+			<b><span>Restart</span></b>
+		</button>
+	</div>
+
+	<script>
+
+		function revMessage() {
+			document.getElementById("click").style.display = "none";
+			document.getElementById("newmessage").style.display = "block";
+		}
+
+		function revealMessage(event) {
+			event.stopPropagation();
+			revMessage();
+		}
+
+		function Restart() {
+			location.reload(); 
+		}
+	</script>
+</body>
+</html>
